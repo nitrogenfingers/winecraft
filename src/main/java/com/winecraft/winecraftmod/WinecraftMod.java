@@ -1,6 +1,5 @@
 package com.winecraft.winecraftmod;
 
-import com.winecraft.winecraftmod.common.item.ItemConstants;
 import com.winecraft.winecraftmod.common.item.ItemTemplates;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
@@ -79,7 +78,9 @@ public class WinecraftMod
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
-            itemRegistryEvent.getRegistry().registerAll(ItemTemplates.GRAPES, ItemTemplates.GRAPE_SEEDS);
+            itemRegistryEvent.getRegistry().registerAll(ItemTemplates.GRAPES,
+                    ItemTemplates.GRAPE_SEEDS,
+                    ItemTemplates.GRAPE_BUCKET);
             LOGGER.info("Grape registry event being fired");
         }
     }

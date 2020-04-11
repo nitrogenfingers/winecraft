@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "winecraft:grapes"
+    },
+    {
+      "item": "winecraft:grapes"
+    },
+    {
+      "item": "winecraft:grapes"
+    },
+    {
+      "item": "winecraft:grapes"
+    },
+    {
+      "item": "winecraft:grapes"
+    },
+    {
+      "item": "winecraft:grapes"
+    },
+    {
+      "item": "winecraft:grapes"
+    },
+    {
+      "item": "winecraft:grapes"
+    },
+    {
+      "item": "minecraft:bucket"
+    }
+  ],
+  "result":{
+    "item": "winecraft:grape_bucket"
+  }
+}
