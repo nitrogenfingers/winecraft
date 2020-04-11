@@ -4,5 +4,5 @@
   "description": "Brew wine from grapes and drink it!",
   "version": "1.0.0-alpha",
   "mcversion": "1.15.2",
-  "authorList": ["nitrogenfingers"]
+  "authorList": ["nitrogenfingers", "Melreus"]
 }]

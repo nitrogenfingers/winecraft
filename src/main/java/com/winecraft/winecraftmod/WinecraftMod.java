@@ -1,7 +1,9 @@
 package com.winecraft.winecraftmod;
 
 import net.minecraft.block.Block;
+import com.winecraft.winecraftmod.common.item.ItemTemplates;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -48,19 +50,19 @@ public class WinecraftMod
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
-        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
+        LOGGER.info("Got game settings {} for Winecraft", event.getMinecraftSupplier().get().gameSettings);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
     {
         // some example code to dispatch IMC to another mod
-        InterModComms.sendTo("examplemod", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
+        InterModComms.sendTo("winecraft", "helloworld", () -> { LOGGER.info("Hello world from Winecraft"); return "Hello world";});
     }
 
     private void processIMC(final InterModProcessEvent event)
     {
         // some example code to receive and process InterModComms from other mods
-        LOGGER.info("Got IMC {}", event.getIMCStream().
+        LOGGER.info("Got IMC {} for Winecraft", event.getIMCStream().
                 map(m->m.getMessageSupplier().get()).
                 collect(Collectors.toList()));
     }
@@ -68,7 +70,7 @@ public class WinecraftMod
     @SubscribeEvent
     public void onServerStarting(FMLServerStartingEvent event) {
         // do something when the server starts
-        LOGGER.info("HELLO from server starting");
+        LOGGER.info("Winecraft server is starting!");
     }
 
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
@@ -76,9 +78,9 @@ public class WinecraftMod
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
         @SubscribeEvent
-        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
-            // register a new block here
-            LOGGER.info("HELLO from Register Block");
+        public static void onItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
+            itemRegistryEvent.getRegistry().register(ItemTemplates.GRAPES);
+            LOGGER.info("Grape registry event being fired");
         }
     }
 }
