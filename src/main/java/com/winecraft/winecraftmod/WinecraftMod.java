@@ -45,6 +45,11 @@ public class WinecraftMod
         // some preinit code
         LOGGER.info("Mod: Winecraft by Nitrogenfingers");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        addEventHandlers();
+    }
+
+    public void addEventHandlers() {
+        MinecraftForge.EVENT_BUS.register(new LootLoadHandler(LOGGER));
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {

@@ -1,0 +1,23 @@
+{
+  "pools": [
+    {
+      "name": "winecraft_seeds",
+      "rolls": {
+          "min": 2.0,
+          "max": 4.0,
+          "type": "minecraft:uniform"
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "winecraft:grape_seeds",
+          "weight": 10
+        },
+        {
+          "type": "empty",
+          "weight": 73
+        }
+      ]
+    }
+  ]
+}
