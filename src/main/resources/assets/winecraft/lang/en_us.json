@@ -1,4 +1,6 @@
 {
     "item.winecraft.grapes": "Grapes",
-    "item.winecraft.grapes.tooltip": "Fresh cabernet grapes, perfect for wine"
+    "item.winecraft.grapes.tooltip": "Fresh cabernet grapes, perfect for wine",
+    "item.winecraft.grape_seeds": "Grape Seeds",
+    "item.winecraft.grapes.tooltip": "Will grow some lovely grapes"
 }

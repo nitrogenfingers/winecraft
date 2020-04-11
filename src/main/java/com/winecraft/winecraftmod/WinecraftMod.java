@@ -79,7 +79,7 @@ public class WinecraftMod
     public static class RegistryEvents {
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
-            itemRegistryEvent.getRegistry().register(ItemTemplates.GRAPES);
+            itemRegistryEvent.getRegistry().registerAll(ItemTemplates.GRAPES, ItemTemplates.GRAPE_SEEDS);
             LOGGER.info("Grape registry event being fired");
         }
     }
