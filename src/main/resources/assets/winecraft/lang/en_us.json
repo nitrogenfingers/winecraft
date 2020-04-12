@@ -4,5 +4,7 @@
     "item.winecraft.grape_seeds": "Grape Seeds",
     "item.winecraft.grape_seeds.tooltip": "Will grow some lovely grapes",
     "item.winecraft.grape_bucket": "Grape Bucket",
-    "item.winecraft.grape_bucket.tooltip": "Full of crushed grapes, ready for ferment"
+    "item.winecraft.grape_bucket.tooltip": "Full of crushed grapes, ready for ferment",
+    "block.winecraft.cask": "Cask",
+    "block.winecraft.cask.tooltip": "Oak cask for ageing wine"
 }

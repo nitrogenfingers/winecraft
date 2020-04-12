@@ -1,6 +1,9 @@
 package com.winecraft.winecraftmod;
 
+import com.winecraft.winecraftmod.common.block.BlockTemplates;
+import com.winecraft.winecraftmod.common.block.WinecraftBlock;
 import com.winecraft.winecraftmod.common.item.ItemTemplates;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.MinecraftForge;
@@ -80,13 +83,23 @@ public class WinecraftMod
     // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
     // Event bus for receiving Registry Events)
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
+    @SuppressWarnings("unused")
     public static class RegistryEvents {
+
         @SubscribeEvent
         public static void onItemsRegistry(final RegistryEvent.Register<Item> itemRegistryEvent) {
-            itemRegistryEvent.getRegistry().registerAll(ItemTemplates.GRAPES,
+            itemRegistryEvent.getRegistry().registerAll(
+                    ItemTemplates.GRAPES,
                     ItemTemplates.GRAPE_SEEDS,
-                    ItemTemplates.GRAPE_BUCKET);
-            LOGGER.info("Grape registry event being fired");
+                    ItemTemplates.GRAPE_BUCKET,
+                    BlockTemplates.getItemFor(WinecraftBlock.CASK));
+            LOGGER.info("Winecraft: item registry event being fired");
+        }
+
+        @SubscribeEvent
+        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
+            blockRegistryEvent.getRegistry().register(BlockTemplates.getBlockFor(WinecraftBlock.CASK));
+            LOGGER.info("Winecraft: block registry event being fired");
         }
     }
 }
